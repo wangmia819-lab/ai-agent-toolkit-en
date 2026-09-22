@@ -1,0 +1,8 @@
+# Codex CLI full auto-execution config (append to ~/.codex/config.toml)
+# Merged automatically by cursor-auto-execute install.sh
+approval_policy = "never"
+sandbox_mode = "workspace-write"
+
+# Allow network inside the workspace (needed for builds/dependency downloads); set to false if not required
+[sandbox_workspace_write]
+network_access = true

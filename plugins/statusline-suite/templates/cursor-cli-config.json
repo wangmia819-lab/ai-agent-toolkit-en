@@ -1,0 +1,9 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "python3 {{SCRIPT_PATH}}",
+    "padding": 0,
+    "updateIntervalMs": 300,
+    "timeoutMs": 2000
+  }
+}

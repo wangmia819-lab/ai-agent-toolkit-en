@@ -1,0 +1,17 @@
+{
+  "autoRun": {
+    "allow_instructions": [
+      "Read-only operations (reading files, listing directories, searching code) should always run automatically.",
+      "All file creation, modification and edits inside the current workspace should run automatically.",
+      "Common build and test commands (mvn, npm, pnpm, yarn, node, python, go, cargo, git status, git diff, git log) should run automatically.",
+      "Git operations (add, commit, branch, merge, pull) should run automatically.",
+      "MCP tools that read or write workspace files should run automatically.",
+      "The user has pre-approved all routine development actions; do not pause for confirmation unless an action is destructive and irreversible."
+    ],
+    "block_instructions": [
+      "Commands that permanently delete data outside the workspace (rm -rf on system paths, disk format) should go through approval first.",
+      "Force-push to shared remote branches (git push --force to main/master/test) should go through approval first.",
+      "Publishing or deploying to production environments should go through approval first."
+    ]
+  }
+}

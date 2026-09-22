@@ -1,0 +1,28 @@
+{
+  "name": "statusline-suite",
+  "version": "1.0.0",
+  "description": "Unified statusline for Claude Code, Codex CLI and Cursor CLI: progress bars for context usage, git branch, model and session info.",
+  "author": {
+    "name": "Xicode AI",
+    "email": "379323664@qq.com"
+  },
+  "homepage": "https://github.com/xicode-ai/codex-plugin",
+  "repository": "https://github.com/xicode-ai/codex-plugin",
+  "license": "MIT",
+  "keywords": ["statusline", "status-bar", "claude-code", "cursor-cli", "codex-cli", "tui"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Statusline Suite",
+    "shortDescription": "Context progress bar + git + model statusline for Claude/Codex/Cursor",
+    "longDescription": "Installs a unified statusline script across Claude Code and Cursor CLI (command-based statusLine) and configures the Codex CLI built-in TUI status line. Shows model, directory, git branch, context progress bar with color thresholds, and platform-specific segments (MCP/tools/todos on Claude; vim/worktree on Cursor).",
+    "developerName": "Xicode AI",
+    "category": "Developer Tools",
+    "capabilities": ["Configure"],
+    "defaultPrompt": [
+      "安装/更新三平台状态栏",
+      "卸载 statusline-suite",
+      "校验三平台状态栏终态"
+    ],
+    "brandColor": "#10B981"
+  }
+}

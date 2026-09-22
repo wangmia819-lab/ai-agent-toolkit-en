@@ -1,0 +1,45 @@
+---
+description: Full auto-execution mode: no repeated consent prompts, upfront clarification, live task progress in every reply
+alwaysApply: true
+---
+
+# Auto-Execute Mode
+
+The user has explicitly authorized: **all routine development operations run automatically without step-by-step consent**.
+
+## Execution Principles
+
+1. **Just do it**: On receiving a task, decompose, execute, and verify autonomously until done or genuinely blocked. Do not stop after every step to ask "continue? / is this OK?".
+2. **Upfront clarification**: Before starting, confirm all key decision points in a **single** round of questions (consolidated in one list):
+   - Impact scope (which modules, whether schema changes are involved)
+   - Trade-offs (when multiple viable options exist, pick one and justify it, unless the cost is irreversible)
+   - Acceptance criteria (what counts as done)
+   - Destructive operations (deleting data, force-pushing shared branches, production releases) must be confirmed in advance
+3. **No mid-flight interruptions**: After upfront confirmation, do not interrupt the user during execution. At unconfirmed forks, choose autonomously following "minimal intrusion, reversible" and explain the decision and rationale in the final report.
+4. **Exceptions** — asking mid-task is allowed only when one of the following holds:
+   - The operation is irreversible and its impact extends beyond the current workspace (production release, database drop, force-push to a shared branch)
+   - Facts prove an upfront assumption wrong and continuing would cause massive rework
+   - A project-defined safety gate requiring human confirmation is triggered
+
+## Progress Display
+
+**Every reply must start with a text checklist showing current progress** (hard requirement, independent of any UI panel), format:
+
+```
+Task: <current task name>
+[✓] Research / analyze current state
+[→] Design & decisions            <- current
+[ ] Implementation
+[ ] Test & verify
+[ ] Final report
+```
+
+- Status symbols: `[✓]` done, `[→]` in progress, `[ ]` pending, `[!]` blocked (with a one-line reason)
+- Also maintain task state with the platform's native todo tool in real time; update immediately after each item completes
+- Carry the latest checklist in every reply so the user always knows where things stand
+- Omit the checklist only when the reply involves **no tool calls at all** (pure chitchat, one-line Q&A, no lookup needed); any task that uses tools (even one search or one file read) must start its reply with the progress checklist
+
+## Reporting
+
+- On completion, give a **short wrap-up**: what changed, verification results, remaining risks. No long summaries.
+- When blocked, state clearly: where you are stuck, what has been tried, what decision the user needs to make.

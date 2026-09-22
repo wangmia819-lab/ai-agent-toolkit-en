@@ -1,0 +1,15 @@
+{
+  "autoRun": {
+    "allow_instructions": [
+      "All build, test and install commands of this project's toolchain should run automatically.",
+      "Git operations (status, diff, log, add, commit, branch, merge, pull) in this repository should run automatically.",
+      "File edits inside the workspace should run automatically.",
+      "The project owner has pre-approved routine development actions in this repo; proceed without asking for confirmation."
+    ],
+    "block_instructions": [
+      "Publishing or deploying artifacts to remote registries should go through approval first.",
+      "Direct pushes to protected shared branches (main/master) should go through approval first.",
+      "Executing SQL DDL/DML against any database should go through approval first."
+    ]
+  }
+}

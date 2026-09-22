@@ -1,0 +1,4 @@
+# ==== statusline-suite: Codex TUI statusline (appended to the end of ~/.codex/config.toml) ====
+[tui]
+status_line = ["model", "cwd", "context_usage", "spinner"]
+terminal_title = ["spinner", "project", "branch"]

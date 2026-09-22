@@ -1,0 +1,3 @@
+[sandbox_workspace_write]
+# Allow network inside the workspace (needed for builds/dependency downloads); set to false if not required
+network_access = true
